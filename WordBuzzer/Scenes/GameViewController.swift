@@ -18,7 +18,15 @@ protocol GameDisplayLogic: class {
   
 class GameViewController: UIViewController, GameDisplayLogic {
     
-    
+    @IBOutlet var playerButtons: [PlayerButton]!
+    @IBOutlet weak var gameBoardView: UIView!
+    @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var optionLabel: UILabel! {
+        didSet{
+            optionLabel.textColor = UIColor.General.SteelBlue
+        }
+    }
+
     // IBOutlet
     
     @IBOutlet weak var startMatchButton: UIButton!{
@@ -75,6 +83,11 @@ class GameViewController: UIViewController, GameDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.startMatch()
+
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [UIView.KeyframeAnimationOptions(rawValue: UIView.AnimationOptions.repeat.rawValue), UIView.KeyframeAnimationOptions(rawValue: UIView.KeyframeAnimationOptions.RawValue(UIView.AnimationCurve.easeInOut.rawValue)), UIView.KeyframeAnimationOptions(rawValue: UIView.AnimationOptions.autoreverse.rawValue)] , animations: {
+            self.optionLabel.alpha = 0.5
+        }) { finished in
+        }
     }
     
     
@@ -86,6 +99,10 @@ class GameViewController: UIViewController, GameDisplayLogic {
 
     @IBAction func startMatch(){
         interactor?.startMatch()
+    }
+    
+    @IBAction func playerBuzzAction(sender: UIButton) {
+        
     }
     
 }

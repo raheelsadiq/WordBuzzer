@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kQ-Kd-A9p">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kQ-Kd-A9p" customClass="StartGameButton" customModule="WordBuzzer" customModuleProvider="target">
                                 <rect key="frame" x="107" y="353" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -32,16 +32,134 @@ Match</string>
                                     <action selector="startMatch" destination="BYZ-38-t0r" eventType="touchUpInside" id="tyd-zu-h5s"/>
                                 </connections>
                             </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4T5-Gt-QhS">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-j6-O1E" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="p7T-jS-RVn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                        <state key="normal">
+                                            <string key="title">Start
+Match</string>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Sh-3B-jvH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cew-cV-zPe" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
+                                        <rect key="frame" x="214" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="6vU-3a-3Nm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                        <state key="normal">
+                                            <string key="title">Start
+Match</string>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XhN-b5-QMu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT4-13-DB2" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
+                                        <rect key="frame" x="214" y="618" width="200" height="200"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="e7F-Jp-KZJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                        <state key="normal">
+                                            <string key="title">Start
+Match</string>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KrP-8f-tZY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBk-1E-z25" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="618" width="200" height="200"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Tjn-As-YuR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                        <state key="normal">
+                                            <string key="title">Start
+Match</string>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OWU-Ey-KJd"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="y1k-Ab-RQg">
+                                        <rect key="frame" x="20" y="323.5" width="374" height="171"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHg-YB-S2j">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translates to:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RS-Vw-0LH">
+                                                <rect key="frame" x="0.0" y="74.5" width="374" height="18"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygP-Hw-Clb">
+                                                <rect key="frame" x="0.0" y="132.5" width="374" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                                <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cew-cV-zPe" secondAttribute="trailing" id="5dm-Ta-64a"/>
+                                    <constraint firstItem="FoQ-j6-O1E" firstAttribute="leading" secondItem="4T5-Gt-QhS" secondAttribute="leading" id="JzU-gh-BN4"/>
+                                    <constraint firstItem="cew-cV-zPe" firstAttribute="top" secondItem="4T5-Gt-QhS" secondAttribute="firstBaseline" symbolic="YES" id="KPu-wW-2Uy"/>
+                                    <constraint firstAttribute="rightMargin" secondItem="VT4-13-DB2" secondAttribute="rightMargin" id="Nvo-5p-zqh"/>
+                                    <constraint firstAttribute="baseline" secondItem="VT4-13-DB2" secondAttribute="bottom" id="R3p-h9-Pgy"/>
+                                    <constraint firstItem="VT4-13-DB2" firstAttribute="width" secondItem="VT4-13-DB2" secondAttribute="height" id="W4t-66-API"/>
+                                    <constraint firstItem="cew-cV-zPe" firstAttribute="width" secondItem="cew-cV-zPe" secondAttribute="height" id="ZOD-UZ-fNE"/>
+                                    <constraint firstItem="FoQ-j6-O1E" firstAttribute="width" secondItem="FoQ-j6-O1E" secondAttribute="height" id="cub-HB-cV1"/>
+                                    <constraint firstItem="FoQ-j6-O1E" firstAttribute="top" secondItem="4T5-Gt-QhS" secondAttribute="top" id="d9B-j7-GLR"/>
+                                    <constraint firstItem="jBk-1E-z25" firstAttribute="left" secondItem="4T5-Gt-QhS" secondAttribute="left" id="dxA-pv-fRN"/>
+                                    <constraint firstItem="y1k-Ab-RQg" firstAttribute="centerY" secondItem="4T5-Gt-QhS" secondAttribute="centerY" id="g86-9Y-ool"/>
+                                    <constraint firstAttribute="bottom" secondItem="jBk-1E-z25" secondAttribute="bottom" id="hN3-l9-8WU"/>
+                                    <constraint firstAttribute="trailing" secondItem="y1k-Ab-RQg" secondAttribute="trailing" constant="20" symbolic="YES" id="mki-qx-LdW"/>
+                                    <constraint firstItem="jBk-1E-z25" firstAttribute="width" secondItem="jBk-1E-z25" secondAttribute="height" id="rG9-i3-mel"/>
+                                    <constraint firstItem="y1k-Ab-RQg" firstAttribute="leading" secondItem="4T5-Gt-QhS" secondAttribute="leading" constant="20" symbolic="YES" id="ydn-7L-FJa"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8kQ-Kd-A9p" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JlP-v2-gmu"/>
                             <constraint firstItem="8kQ-Kd-A9p" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="LtW-LH-FV0"/>
+                            <constraint firstItem="4T5-Gt-QhS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Tjw-Ar-882"/>
+                            <constraint firstItem="4T5-Gt-QhS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XY0-gZ-8Zi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="4T5-Gt-QhS" secondAttribute="leading" id="Yap-xY-A1b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="4T5-Gt-QhS" secondAttribute="top" id="vJc-sx-COA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="gameBoardView" destination="4T5-Gt-QhS" id="uaB-1i-ymp"/>
+                        <outlet property="optionLabel" destination="ygP-Hw-Clb" id="fj7-Nt-nNM"/>
                         <outlet property="startMatchButton" destination="8kQ-Kd-A9p" id="WfW-aU-Cnm"/>
+                        <outlet property="wordLabel" destination="fHg-YB-S2j" id="os5-cT-jeO"/>
+                        <outletCollection property="playerButtons" destination="jBk-1E-z25" collectionClass="NSMutableArray" id="YXA-xR-yj2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
