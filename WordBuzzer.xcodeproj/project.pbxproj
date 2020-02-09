@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F822F60723F07EA60073ACEB /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = F822F60623F07EA60073ACEB /* words.json */; };
+		F822F60923F0808F0073ACEB /* GameWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822F60823F0808F0073ACEB /* GameWorkerTests.swift */; };
+		F822F60A23F0810E0073ACEB /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883556E23F078D2008153A6 /* GamePresenter.swift */; };
+		F822F60B23F0810E0073ACEB /* GameWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883556F23F078D2008153A6 /* GameWorker.swift */; };
+		F822F60C23F0810E0073ACEB /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883557023F078D2008153A6 /* GameRouter.swift */; };
+		F822F60D23F0810E0073ACEB /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883557123F078D2008153A6 /* GameModels.swift */; };
+		F822F60E23F0810E0073ACEB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883557223F078D2008153A6 /* GameViewController.swift */; };
+		F822F60F23F0810E0073ACEB /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883557323F078D2008153A6 /* GameInteractor.swift */; };
+		F822F61123F082DA0073ACEB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822F61023F082DA0073ACEB /* UIViewExtensions.swift */; };
 		F883553D23F0785E008153A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883553C23F0785E008153A6 /* AppDelegate.swift */; };
 		F883553F23F0785E008153A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883553E23F0785E008153A6 /* SceneDelegate.swift */; };
 		F883554623F07861008153A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F883554523F07861008153A6 /* Assets.xcassets */; };
@@ -40,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F822F60623F07EA60073ACEB /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		F822F60823F0808F0073ACEB /* GameWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWorkerTests.swift; sourceTree = "<group>"; };
+		F822F61023F082DA0073ACEB /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		F883553923F0785E008153A6 /* WordBuzzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordBuzzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F883553C23F0785E008153A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F883553E23F0785E008153A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F822F61223F082E40073ACEB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F822F61023F082DA0073ACEB /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F883553023F0785E008153A6 = {
 			isa = PBXGroup;
 			children = (
@@ -111,9 +131,11 @@
 			children = (
 				F883553C23F0785E008153A6 /* AppDelegate.swift */,
 				F883553E23F0785E008153A6 /* SceneDelegate.swift */,
+				F822F61223F082E40073ACEB /* Extensions */,
 				F883556D23F078AD008153A6 /* Scenes */,
 				F883556C23F078A5008153A6 /* Views */,
 				F883554523F07861008153A6 /* Assets.xcassets */,
+				F822F60623F07EA60073ACEB /* words.json */,
 				F883554A23F07861008153A6 /* Info.plist */,
 			);
 			path = WordBuzzer;
@@ -123,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				F883555323F07861008153A6 /* WordBuzzerTests.swift */,
+				F822F60823F0808F0073ACEB /* GameWorkerTests.swift */,
 				F883555523F07861008153A6 /* Info.plist */,
 			);
 			path = WordBuzzerTests;
@@ -264,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F883557F23F078EC008153A6 /* Main.storyboard in Resources */,
+				F822F60723F07EA60073ACEB /* words.json in Resources */,
 				F883554623F07861008153A6 /* Assets.xcassets in Resources */,
 				F883557E23F078EC008153A6 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -297,6 +321,7 @@
 				F883557923F078D2008153A6 /* GameInteractor.swift in Sources */,
 				F883553F23F0785E008153A6 /* SceneDelegate.swift in Sources */,
 				F883557423F078D2008153A6 /* GamePresenter.swift in Sources */,
+				F822F61123F082DA0073ACEB /* UIViewExtensions.swift in Sources */,
 				F883557523F078D2008153A6 /* GameWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F822F60E23F0810E0073ACEB /* GameViewController.swift in Sources */,
+				F822F60C23F0810E0073ACEB /* GameRouter.swift in Sources */,
+				F822F60D23F0810E0073ACEB /* GameModels.swift in Sources */,
 				F883555423F07861008153A6 /* WordBuzzerTests.swift in Sources */,
+				F822F60F23F0810E0073ACEB /* GameInteractor.swift in Sources */,
+				F822F60923F0808F0073ACEB /* GameWorkerTests.swift in Sources */,
+				F822F60A23F0810E0073ACEB /* GamePresenter.swift in Sources */,
+				F822F60B23F0810E0073ACEB /* GameWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

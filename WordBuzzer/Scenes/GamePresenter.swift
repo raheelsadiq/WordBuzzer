@@ -13,17 +13,14 @@
 import UIKit
 
 protocol GamePresentationLogic {
-    func presentSomething(response: Game.Something.Response)
+
 }
 
 class GamePresenter: GamePresentationLogic {
     
     weak var viewController: GameDisplayLogic?
     
-    // MARK: - Do something
+
     
-    func presentSomething(response: Game.Something.Response) {
-        let viewModel = Game.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
-    }
+
 }

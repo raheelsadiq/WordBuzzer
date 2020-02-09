@@ -14,6 +14,33 @@ import UIKit
 
 class GameWorker {
     
-    func doSomeWork() {
+    func fetchWords() -> [Game.Word] {
+        
+        var words = [Game.Word]()
+        do {
+            if let path = Bundle.main.path(forResource: "words", ofType: "json") {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                if let jsonResult = jsonResult as? [[String: AnyObject]] {
+                    
+                    for dict in jsonResult {
+                        words.append(
+                            Game.Word(
+                                word: dict["text_eng"] as! String,
+                                translation: dict["text_spa"] as! String
+                            )
+                        )
+                    }
+                }
+                
+                return words
+            }
+        } catch {
+            print(error.localizedDescription)
+            return words
+        }
+        
+        return words
+        
     }
 }

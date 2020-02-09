@@ -13,17 +13,25 @@
 import UIKit
 
 enum Game {
-    // MARK: Use cases
+
+    struct Player {
+        var score: Int
+    }
     
-    enum Something {
-        
-        struct Request {
-        }
-        
-        struct Response {
-        }
-        
-        struct ViewModel {
-        }
+    struct Round {
+        let word: String
+        let options: [String]
+        let correctAnswer: [String]
+    }
+    
+    
+    struct Matct {
+        let numberOfRounds: Int
+        let rounds: [Round]
+    }
+    
+    struct Word {
+        let word: String
+        let translation: String
     }
 }

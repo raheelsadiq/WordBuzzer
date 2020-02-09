@@ -13,26 +13,45 @@
 import UIKit
 
 protocol GameBusinessLogic {
-    func doSomething(request: Game.Something.Request)
+    func startMatch()
 }
 
 protocol GameDataStore {
-    //var name: String { get set }
+
 }
 
 class GameInteractor: GameBusinessLogic, GameDataStore {
     
     var presenter: GamePresentationLogic?
-    var worker: GameWorker?
-    //var name: String = ""
-    
-    // MARK: - Do something
-    
-    func doSomething(request: Game.Something.Request) {
+    var worker: GameWorker
+    var words = [Game.Word]()
+    let players: [Game.Player]
+    var match: Game.Matct?
+    let numberOfRounds = 11
+    let numberOfWrongOptions = 3
+
+    init() {
         worker = GameWorker()
-        worker?.doSomeWork()
         
-        let response = Game.Something.Response()
-        presenter?.presentSomething(response: response)
+        players = [
+            Game.Player(score: 0),
+            Game.Player(score: 0),
+            Game.Player(score: 0),
+            Game.Player(score: 0)
+        ]
+        
+        DispatchQueue.global().async { [weak self] in
+            self?.words = self?.worker.fetchWords() ?? []
+            print(self?.words.count)
+        }
+    }
+    
+    func startMatch() {
+        
+        match = Game.Matct(
+            numberOfRounds: numberOfRounds,
+            rounds: [
+                
+        ])
     }
 }

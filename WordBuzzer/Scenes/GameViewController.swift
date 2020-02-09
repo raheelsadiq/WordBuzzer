@@ -13,10 +13,21 @@
 import UIKit
 
 protocol GameDisplayLogic: class {
-    func displaySomething(viewModel: Game.Something.ViewModel)
-}
 
+}
+  
 class GameViewController: UIViewController, GameDisplayLogic {
+    
+    
+    // IBOutlet
+    
+    @IBOutlet weak var startMatchButton: UIButton!{
+        didSet{
+            startMatchButton.titleLabel?.numberOfLines = 2
+            startMatchButton.titleLabel?.textAlignment = .center
+            startMatchButton.setRoundedFull()
+        }
+    }
     
     var interactor: GameBusinessLogic?
     var router: (NSObjectProtocol & GameRoutingLogic & GameDataPassing)?
@@ -63,22 +74,18 @@ class GameViewController: UIViewController, GameDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        interactor?.startMatch()
     }
     
-    // MARK: - Make Request
     
-    func doSomething() {
-        let request = Game.Something.Request()
-        interactor?.doSomething(request: request)
-    }
-
     // MARK: - Display
 
-    func displaySomething(viewModel: Game.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
-    }
+
     
     // MARK: - IBActions
 
+    @IBAction func startMatch(){
+        interactor?.startMatch()
+    }
+    
 }
