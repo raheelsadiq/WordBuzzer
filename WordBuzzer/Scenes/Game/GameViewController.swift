@@ -17,11 +17,14 @@ protocol GameDisplayLogic: class {
     func displayRoundResult(playerNumber: Int, isWinner: Bool)
     func display(option: String)
     func update(players:[Game.PlayerViewModel])
+    func displayMatchDraw()
+    func displayWinner()
 }
   
 class GameViewController: UIViewController, GameDisplayLogic {
     
     @IBOutlet var playerButtons: [PlayerButton]!
+    
     @IBOutlet weak var gameBoardView: UIView!{
         didSet {
             gameBoardView.isHidden = true
@@ -104,10 +107,18 @@ class GameViewController: UIViewController, GameDisplayLogic {
         gameBoardView.showWithAnimation()
         startMatchButton.hideWithAnimation()
         wordLabel.text = round.word
+        
+        for button in playerButtons {
+            button.gameState = .normal
+        }
     }
     
     func displayRoundResult(playerNumber: Int, isWinner: Bool){
-        
+        if isWinner {
+            playerButtons[playerNumber].gameState = .won
+        }else{
+            playerButtons[playerNumber].gameState = .lost
+        }
     }
     
     func update(players: [Game.PlayerViewModel]) {
@@ -116,10 +127,10 @@ class GameViewController: UIViewController, GameDisplayLogic {
         }
     }
     
-    // MARK: - IBActions
-
-    @IBAction func startMatch(){
-        interactor?.startMatch()
+    func displayMatchDraw() {
+        gameBoardView.hideWithAnimation()
+        startMatchButton.showWithAnimation()
+        startMatchButton.setTitle("Match Draw\nRematch?", for: .normal)
     }
     
     func display(option: String) {
@@ -139,6 +150,19 @@ class GameViewController: UIViewController, GameDisplayLogic {
     }
     
     private var displayedOption: String?
+
+    func displayWinner() {
+        performSegue(withIdentifier: "Result", sender: nil)
+        gameBoardView.hideWithAnimation()
+        startMatchButton.showWithAnimation()
+        startMatchButton.setTitle("Rematch?", for: .normal)
+    }
+    
+    // MARK: - IBActions
+
+    @IBAction func startMatch(){
+        interactor?.startMatch()
+    }
     
     @IBAction func playerBuzzAction(sender: UIButton) {
         interactor?.selected(option: displayedOption! , by: sender.tag)

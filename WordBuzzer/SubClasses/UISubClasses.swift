@@ -9,6 +9,12 @@
 import UIKit
 
 class PlayerButton: UIButton {
+    
+    enum GameState {
+        case won
+        case normal
+        case lost
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,8 +23,26 @@ class PlayerButton: UIButton {
         titleLabel?.numberOfLines = 2
         titleLabel?.textAlignment = .center
         setBackgroundImage(UIColor.General.LightGrayColor.image(), for: .normal)
-        setBackgroundImage(UIColor.General.BlueColor.image(), for: .highlighted)
         setBorder(UIColor.General.LightGrayColor.withAlphaComponent(0.7), width: 5)
+        
+
+
+        setBackgroundImage(UIColor.General.GoldColor.image(), for: .selected)
+        setBackgroundImage(UIColor.General.RedColor.image(), for: .application)
+    }
+    
+    var gameState: GameState = .normal {
+        didSet{
+            switch gameState {
+            case .normal:
+                setBackgroundImage(UIColor.General.BlueColor.image(), for: .normal)
+            case .won:
+                setBackgroundImage(UIColor.General.GoldColor.image(), for: .normal)
+            case .lost:
+                setBackgroundImage(UIColor.General.RedColor.image(), for: .normal)
+            }
+        }
+        
     }
 }
  
@@ -32,6 +56,7 @@ class StartGameButton: UIButton {
         setBackgroundImage(UIColor.General.LightGrayColor.image(), for: .normal)
         setBackgroundImage(UIColor.General.DarkGrayColor.image(), for: .highlighted)
         setBorder(UIColor.General.LightGrayColor.withAlphaComponent(0.7), width: 5)
+        titleLabel?.numberOfLines = 2
     }
 }
 

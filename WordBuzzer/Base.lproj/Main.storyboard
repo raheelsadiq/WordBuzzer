@@ -35,7 +35,7 @@ Match</string>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4T5-Gt-QhS">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-j6-O1E" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-j6-O1E" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -51,7 +51,7 @@ Match</string>
                                             <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Sh-3B-jvH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cew-cV-zPe" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cew-cV-zPe" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
                                         <rect key="frame" x="214" y="0.0" width="200" height="200"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -67,23 +67,7 @@ Match</string>
                                             <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XhN-b5-QMu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT4-13-DB2" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
-                                        <rect key="frame" x="214" y="618" width="200" height="200"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="e7F-Jp-KZJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
-                                        <state key="normal">
-                                            <string key="title">Start
-Match</string>
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KrP-8f-tZY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBk-1E-z25" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBk-1E-z25" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="618" width="200" height="200"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -97,6 +81,22 @@ Match</string>
                                         </state>
                                         <connections>
                                             <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OWU-Ey-KJd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT4-13-DB2" customClass="PlayerButton" customModule="WordBuzzer" customModuleProvider="target">
+                                        <rect key="frame" x="214" y="618" width="200" height="200"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="e7F-Jp-KZJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                        <state key="normal">
+                                            <string key="title">Start
+Match</string>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KrP-8f-tZY"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="y1k-Ab-RQg">
@@ -167,15 +167,79 @@ Match</string>
                         <outlet property="optionLabel" destination="ygP-Hw-Clb" id="fj7-Nt-nNM"/>
                         <outlet property="startMatchButton" destination="8kQ-Kd-A9p" id="WfW-aU-Cnm"/>
                         <outlet property="wordLabel" destination="fHg-YB-S2j" id="os5-cT-jeO"/>
-                        <outletCollection property="playerButtons" destination="FoQ-j6-O1E" collectionClass="NSMutableArray" id="O69-UN-1qG"/>
-                        <outletCollection property="playerButtons" destination="cew-cV-zPe" collectionClass="NSMutableArray" id="bh4-5h-6OI"/>
-                        <outletCollection property="playerButtons" destination="VT4-13-DB2" collectionClass="NSMutableArray" id="EQR-Mj-wGl"/>
-                        <outletCollection property="playerButtons" destination="jBk-1E-z25" collectionClass="NSMutableArray" id="yN6-Oe-t3k"/>
+                        <outletCollection property="playerButtons" destination="FoQ-j6-O1E" collectionClass="NSMutableArray" id="Y9N-TW-qWO"/>
+                        <outletCollection property="playerButtons" destination="cew-cV-zPe" collectionClass="NSMutableArray" id="dVJ-kA-Zyy"/>
+                        <outletCollection property="playerButtons" destination="jBk-1E-z25" collectionClass="NSMutableArray" id="Hc6-Wg-V4W"/>
+                        <outletCollection property="playerButtons" destination="VT4-13-DB2" collectionClass="NSMutableArray" id="S7c-by-xRe"/>
+                        <segue destination="a91-H4-7ft" kind="presentation" identifier="Result" modalPresentationStyle="fullScreen" id="vZx-3y-RZz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="jPf-4v-d0z">
+            <objects>
+                <viewController id="a91-H4-7ft" customClass="ResultViewController" customModule="WordBuzzer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZRV-8h-nXd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-Qb-PGY">
+                                <rect key="frame" x="0.0" y="393" width="414" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHb-mf-LqK" customClass="WordLabel" customModule="WordBuzzer" customModuleProvider="target">
+                                        <rect key="frame" x="154" y="0.0" width="106.5" height="44"/>
+                                        <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Bo2-xk-sZK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hex-Ru-on2" customClass="WordLabel" customModule="WordBuzzer" customModuleProvider="target">
+                                        <rect key="frame" x="145.5" y="68" width="123" height="52"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.69411764710000001" blue="0.42745098040000001" alpha="0.50409353595890416" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="sYF-XK-cdC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                        <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU8-3N-rPI">
+                                <rect key="frame" x="163" y="840" width="88" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Rematch?">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="rematchAction" destination="a91-H4-7ft" eventType="touchUpInside" id="43A-0c-tVs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DU8-3N-rPI" secondAttribute="bottom" constant="20" id="Ewf-wC-bTx"/>
+                            <constraint firstItem="7gp-Qb-PGY" firstAttribute="leading" secondItem="MDR-77-fXp" secondAttribute="leading" id="Jkm-Km-Wh2"/>
+                            <constraint firstItem="DU8-3N-rPI" firstAttribute="centerX" secondItem="MDR-77-fXp" secondAttribute="centerX" id="NgZ-XF-FaK"/>
+                            <constraint firstItem="MDR-77-fXp" firstAttribute="trailing" secondItem="7gp-Qb-PGY" secondAttribute="trailing" id="RP6-zd-tcR"/>
+                            <constraint firstItem="7gp-Qb-PGY" firstAttribute="centerY" secondItem="MDR-77-fXp" secondAttribute="centerY" id="Uiw-5f-YFN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MDR-77-fXp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5QQ-hs-jQ6"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="Hex-Ru-on2" id="D8m-It-4NG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ozj-Qk-JGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.7101449275362" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>

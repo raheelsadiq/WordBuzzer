@@ -17,6 +17,17 @@
 		F822F60F23F0810E0073ACEB /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883557323F078D2008153A6 /* GameInteractor.swift */; };
 		F822F61123F082DA0073ACEB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822F61023F082DA0073ACEB /* UIViewExtensions.swift */; };
 		F822F61423F08DE60073ACEB /* UISubClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822F61323F08DE60073ACEB /* UISubClasses.swift */; };
+		F836981423F126B1009FE3E8 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836980E23F126B1009FE3E8 /* ResultPresenter.swift */; };
+		F836981623F126B1009FE3E8 /* ResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836981023F126B1009FE3E8 /* ResultRouter.swift */; };
+		F836981823F126B1009FE3E8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836981223F126B1009FE3E8 /* ResultViewController.swift */; };
+		F836981923F126B1009FE3E8 /* ResultInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836981323F126B1009FE3E8 /* ResultInteractor.swift */; };
+		F836981C23F13371009FE3E8 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836980E23F126B1009FE3E8 /* ResultPresenter.swift */; };
+		F836981D23F13371009FE3E8 /* ResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836981023F126B1009FE3E8 /* ResultRouter.swift */; };
+		F836981E23F13371009FE3E8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836981223F126B1009FE3E8 /* ResultViewController.swift */; };
+		F836981F23F13371009FE3E8 /* ResultInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836981323F126B1009FE3E8 /* ResultInteractor.swift */; };
+		F836982223F133E8009FE3E8 /* InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836982123F133E8009FE3E8 /* InteractorTests.swift */; };
+		F836982323F134AE009FE3E8 /* UISubClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822F61323F08DE60073ACEB /* UISubClasses.swift */; };
+		F836982423F134AE009FE3E8 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822F61023F082DA0073ACEB /* UIViewExtensions.swift */; };
 		F883553D23F0785E008153A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883553C23F0785E008153A6 /* AppDelegate.swift */; };
 		F883553F23F0785E008153A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F883553E23F0785E008153A6 /* SceneDelegate.swift */; };
 		F883554623F07861008153A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F883554523F07861008153A6 /* Assets.xcassets */; };
@@ -54,6 +65,11 @@
 		F822F60823F0808F0073ACEB /* GameWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWorkerTests.swift; sourceTree = "<group>"; };
 		F822F61023F082DA0073ACEB /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		F822F61323F08DE60073ACEB /* UISubClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISubClasses.swift; sourceTree = "<group>"; };
+		F836980E23F126B1009FE3E8 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
+		F836981023F126B1009FE3E8 /* ResultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRouter.swift; sourceTree = "<group>"; };
+		F836981223F126B1009FE3E8 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		F836981323F126B1009FE3E8 /* ResultInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultInteractor.swift; sourceTree = "<group>"; };
+		F836982123F133E8009FE3E8 /* InteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
 		F883553923F0785E008153A6 /* WordBuzzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordBuzzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F883553C23F0785E008153A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F883553E23F0785E008153A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +132,30 @@
 			path = SubClasses;
 			sourceTree = "<group>";
 		};
+		F836980C23F1268C009FE3E8 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				F883556E23F078D2008153A6 /* GamePresenter.swift */,
+				F883556F23F078D2008153A6 /* GameWorker.swift */,
+				F883557023F078D2008153A6 /* GameRouter.swift */,
+				F883557123F078D2008153A6 /* GameModels.swift */,
+				F883557223F078D2008153A6 /* GameViewController.swift */,
+				F883557323F078D2008153A6 /* GameInteractor.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		F836980D23F12694009FE3E8 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				F836980E23F126B1009FE3E8 /* ResultPresenter.swift */,
+				F836981023F126B1009FE3E8 /* ResultRouter.swift */,
+				F836981223F126B1009FE3E8 /* ResultViewController.swift */,
+				F836981323F126B1009FE3E8 /* ResultInteractor.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		F883553023F0785E008153A6 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +195,7 @@
 		F883555223F07861008153A6 /* WordBuzzerTests */ = {
 			isa = PBXGroup;
 			children = (
+				F836982123F133E8009FE3E8 /* InteractorTests.swift */,
 				F883555323F07861008153A6 /* WordBuzzerTests.swift */,
 				F822F60823F0808F0073ACEB /* GameWorkerTests.swift */,
 				F883555523F07861008153A6 /* Info.plist */,
@@ -183,12 +224,8 @@
 		F883556D23F078AD008153A6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F883556E23F078D2008153A6 /* GamePresenter.swift */,
-				F883556F23F078D2008153A6 /* GameWorker.swift */,
-				F883557023F078D2008153A6 /* GameRouter.swift */,
-				F883557123F078D2008153A6 /* GameModels.swift */,
-				F883557223F078D2008153A6 /* GameViewController.swift */,
-				F883557323F078D2008153A6 /* GameInteractor.swift */,
+				F836980C23F1268C009FE3E8 /* Game */,
+				F836980D23F12694009FE3E8 /* Result */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -330,10 +367,14 @@
 				F883557723F078D2008153A6 /* GameModels.swift in Sources */,
 				F883553D23F0785E008153A6 /* AppDelegate.swift in Sources */,
 				F883557923F078D2008153A6 /* GameInteractor.swift in Sources */,
+				F836981823F126B1009FE3E8 /* ResultViewController.swift in Sources */,
 				F883553F23F0785E008153A6 /* SceneDelegate.swift in Sources */,
 				F883557423F078D2008153A6 /* GamePresenter.swift in Sources */,
+				F836981623F126B1009FE3E8 /* ResultRouter.swift in Sources */,
 				F822F61123F082DA0073ACEB /* UIViewExtensions.swift in Sources */,
 				F883557523F078D2008153A6 /* GameWorker.swift in Sources */,
+				F836981923F126B1009FE3E8 /* ResultInteractor.swift in Sources */,
+				F836981423F126B1009FE3E8 /* ResultPresenter.swift in Sources */,
 				F822F61423F08DE60073ACEB /* UISubClasses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,13 +384,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F822F60E23F0810E0073ACEB /* GameViewController.swift in Sources */,
+				F836982423F134AE009FE3E8 /* UIViewExtensions.swift in Sources */,
+				F836981F23F13371009FE3E8 /* ResultInteractor.swift in Sources */,
+				F836981C23F13371009FE3E8 /* ResultPresenter.swift in Sources */,
+				F836982323F134AE009FE3E8 /* UISubClasses.swift in Sources */,
 				F822F60C23F0810E0073ACEB /* GameRouter.swift in Sources */,
 				F822F60D23F0810E0073ACEB /* GameModels.swift in Sources */,
 				F883555423F07861008153A6 /* WordBuzzerTests.swift in Sources */,
 				F822F60F23F0810E0073ACEB /* GameInteractor.swift in Sources */,
+				F836981D23F13371009FE3E8 /* ResultRouter.swift in Sources */,
+				F836982223F133E8009FE3E8 /* InteractorTests.swift in Sources */,
 				F822F60923F0808F0073ACEB /* GameWorkerTests.swift in Sources */,
 				F822F60A23F0810E0073ACEB /* GamePresenter.swift in Sources */,
 				F822F60B23F0810E0073ACEB /* GameWorker.swift in Sources */,
+				F836981E23F13371009FE3E8 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,12 +14,19 @@ import UIKit
 
 protocol GamePresentationLogic {
     func present(round: Game.Round)
-    func presentWinner(player: Game.Player)
-    func presentLoser(player: Game.Player)
+    func presentRoundResult(playerNumber: Int, hasWon: Bool)
     func presentPlayer(players: [Game.Player])
+    func presentWinner(player: Game.Player)
+    func presentDraw()
 }
 
 class GamePresenter: GamePresentationLogic {
+    
+    weak var viewController: GameDisplayLogic?
+   
+    private var timer: Timer?
+    private var round: Game.Round!
+    private var currentOptionIndex: Int = 0
     
     func presentPlayer(players: [Game.Player]) {
         var playerViewModels = [Game.PlayerViewModel]()
@@ -29,12 +36,6 @@ class GamePresenter: GamePresentationLogic {
         
         viewController?.update(players: playerViewModels)
     }
-    
-    weak var viewController: GameDisplayLogic?
-   
-    private var timer: Timer?
-    private var round: Game.Round!
-    private var currentOptionIndex: Int = 0
     
     func present(round: Game.Round) {
         timer?.invalidate()
@@ -58,12 +59,15 @@ class GamePresenter: GamePresentationLogic {
         startTimer()
     }
 
-    func presentWinner(player: Game.Player) {
-            
+    func presentRoundResult(playerNumber: Int, hasWon: Bool) {
+        viewController?.displayRoundResult(playerNumber: playerNumber, isWinner: hasWon)
     }
     
-    func presentLoser(player: Game.Player) {
-            
+    func presentWinner(player: Game.Player) {
+        viewController?.displayWinner()
     }
-
+    
+    func presentDraw() {
+        viewController?.displayMatchDraw()
+    }
 }

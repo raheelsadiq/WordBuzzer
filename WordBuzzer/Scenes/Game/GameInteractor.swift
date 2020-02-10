@@ -19,7 +19,7 @@ protocol GameBusinessLogic {
 }
 
 protocol GameDataStore {
-
+    var winnerTitle: String {get set}
 }
 
 class GameInteractor: GameBusinessLogic, GameDataStore {
@@ -27,11 +27,12 @@ class GameInteractor: GameBusinessLogic, GameDataStore {
     var presenter: GamePresentationLogic?
     var worker: GameWorker
     var words = [Game.Word]()
-    let players: [Game.Player]
+    var players: [Game.Player]!
     var match: Game.Matct!
-    let numberOfRounds = 10
+    let numberOfRounds = 3
     let numberOfOptions = 4
     let timeInterval = TimeInterval(3)
+    var winnerTitle: String  = ""
     
     var currentRound: Int = -1 {
         didSet{
@@ -42,6 +43,10 @@ class GameInteractor: GameBusinessLogic, GameDataStore {
 
     init() {
         worker = GameWorker()
+        words = worker.fetchWords()
+    }
+    
+    func startMatch() {
         
         players = [
             Game.Player(score: 0),
@@ -49,14 +54,6 @@ class GameInteractor: GameBusinessLogic, GameDataStore {
             Game.Player(score: 0),
             Game.Player(score: 0)
         ]
-        
-        DispatchQueue.global().async { [weak self] in
-            self?.words = self?.worker.fetchWords() ?? []
-
-        }
-    }
-    
-    func startMatch() {
         
         var rounds = [Game.Round]()
         
@@ -84,15 +81,30 @@ class GameInteractor: GameBusinessLogic, GameDataStore {
     func selected(option: String, by playerNumber: Int) {
         
         let round = match.rounds[currentRound]
+
         if option == round.correctAnswer {
-            presenter?.presentWinner(player: players[playerNumber])
+            presenter?.presentRoundResult(playerNumber: playerNumber, hasWon: true)
+            players[playerNumber].score  += 1
         }else{
-            presenter?.presentLoser(player: players[playerNumber])
+            presenter?.presentRoundResult(playerNumber: playerNumber, hasWon: false)
+        }
+        
+        if currentRound == numberOfRounds-1 {
+            if let winner = players.max(by: { $0.score < $1.score }), winner.score > 0 {
+                winnerTitle = "Player \(playerNumber + 1)"
+                presenter?.presentWinner(player: winner)
+                
+            }else {
+                presenter?.presentDraw()
+            }
+
+        }else{
+            currentRound += 1
         }
     }
     
     func timedOut(){
-        
+        // time out if no one answers
     }
 }
 

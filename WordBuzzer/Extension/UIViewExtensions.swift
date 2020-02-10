@@ -108,7 +108,6 @@ extension UIColor {
 extension Array where Element == Game.Word {
     
     func getRandomOptions(count: Int) -> [Game.Word]{
-        
         return[]
     }
     
