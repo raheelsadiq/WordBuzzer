@@ -14,6 +14,8 @@ import UIKit
 
 protocol GameBusinessLogic {
     func startMatch()
+    func selected(option: String, by playerNumber: Int)
+    func timedOut()
 }
 
 protocol GameDataStore {
@@ -26,9 +28,17 @@ class GameInteractor: GameBusinessLogic, GameDataStore {
     var worker: GameWorker
     var words = [Game.Word]()
     let players: [Game.Player]
-    var match: Game.Matct?
-    let numberOfRounds = 11
-    let numberOfWrongOptions = 3
+    var match: Game.Matct!
+    let numberOfRounds = 10
+    let numberOfOptions = 4
+    let timeInterval = TimeInterval(3)
+    
+    var currentRound: Int = -1 {
+        didSet{
+            presenter?.presentPlayer(players: players)
+            presenter?.present(round: match.rounds[currentRound])
+        }
+    }
 
     init() {
         worker = GameWorker()
@@ -42,16 +52,48 @@ class GameInteractor: GameBusinessLogic, GameDataStore {
         
         DispatchQueue.global().async { [weak self] in
             self?.words = self?.worker.fetchWords() ?? []
-            print(self?.words.count)
+
         }
     }
     
     func startMatch() {
         
+        var rounds = [Game.Round]()
+        
+        for _ in 0..<numberOfRounds {
+            
+            let randomWords = words.choose(numberOfOptions)
+            let options = randomWords.map { (word) -> String in
+                word.translation
+            }
+            
+            let round = Game.Round(
+                word: randomWords.first!.word,
+                correctAnswer: randomWords.first!.translation,
+                options: options.shuffled(),
+                time: timeInterval)
+            rounds.append(round)
+        }
+        
         match = Game.Matct(
             numberOfRounds: numberOfRounds,
-            rounds: [
-                
-        ])
+            rounds: rounds)
+        currentRound = 0
+    }
+    
+    func selected(option: String, by playerNumber: Int) {
+        
+        let round = match.rounds[currentRound]
+        if option == round.correctAnswer {
+            presenter?.presentWinner(player: players[playerNumber])
+        }else{
+            presenter?.presentLoser(player: players[playerNumber])
+        }
+    }
+    
+    func timedOut(){
+        
     }
 }
+
+

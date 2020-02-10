@@ -15,13 +15,45 @@ extension UIView {
         self.clipsToBounds = true;
     }
     
+    func setRoundedCorner(radius value:CGFloat) {
+        self.layer.cornerRadius = value
+        self.clipsToBounds = true
+    }
+    
     func setBorder(_ color:UIColor, width:CGFloat) {
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
         self.clipsToBounds = true
     }
     
+    func showWithAnimation() {
+        
+        guard isHidden else { return }
+        
+        self.alpha = 0;
+        self.isHidden = false
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
+            self.alpha = 1
+        })
+    }
+    
+    func hideWithAnimation() {
+        
+        guard !isHidden else { return }
+
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
+            self.alpha = 0
+        }, completion: { (finish) -> Void in
+            if finish {
+                self.isHidden = true
+                self.alpha = 1
+            }
+        })
+    }
+    
 }
+
+// MARK: - Color
 
 extension UIColor {
     
@@ -70,5 +102,17 @@ extension UIColor {
         static let OffWhite: UIColor = UIColor(r: 245, g: 245, b: 245, a: 1)
         
         static let NavyBlue: UIColor = UIColor(r: 22, g: 22, b: 41, a: 1)
+    }
+}
+
+extension Array where Element == Game.Word {
+    
+    func getRandomOptions(count: Int) -> [Game.Word]{
+        
+        return[]
+    }
+    
+    func choose(_ n: Int) -> ArraySlice<Game.Word> {
+        shuffled().prefix(n)
     }
 }

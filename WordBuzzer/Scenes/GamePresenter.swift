@@ -13,14 +13,57 @@
 import UIKit
 
 protocol GamePresentationLogic {
-
+    func present(round: Game.Round)
+    func presentWinner(player: Game.Player)
+    func presentLoser(player: Game.Player)
+    func presentPlayer(players: [Game.Player])
 }
 
 class GamePresenter: GamePresentationLogic {
     
+    func presentPlayer(players: [Game.Player]) {
+        var playerViewModels = [Game.PlayerViewModel]()
+        for (index,player) in players.enumerated() {
+            playerViewModels.append(Game.PlayerViewModel(title: "Player \(index + 1)\n score: \(player.score)"))
+        }
+        
+        viewController?.update(players: playerViewModels)
+    }
+    
     weak var viewController: GameDisplayLogic?
+   
+    private var timer: Timer?
+    private var round: Game.Round!
+    private var currentOptionIndex: Int = 0
     
+    func present(round: Game.Round) {
+        timer?.invalidate()
+        self.round = round
+        viewController?.displayBoardWith(round: round)
+        presentNextOption()
+    }
+    
+    private func startTimer(){
+        timer = Timer.scheduledTimer(withTimeInterval: round.time, repeats: false, block: { [weak self](timer) in
+            self?.presentNextOption()
+            })
+    }
+    
+    @objc func presentNextOption(){
+        viewController?.display(option: round.options[currentOptionIndex])
+        currentOptionIndex += 1
+        if currentOptionIndex == round.options.count {
+            currentOptionIndex = 0
+        }
+        startTimer()
+    }
 
+    func presentWinner(player: Game.Player) {
+            
+    }
     
+    func presentLoser(player: Game.Player) {
+            
+    }
 
 }

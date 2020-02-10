@@ -13,13 +13,20 @@
 import UIKit
 
 protocol GameDisplayLogic: class {
-
+    func displayBoardWith(round: Game.Round)
+    func displayRoundResult(playerNumber: Int, isWinner: Bool)
+    func display(option: String)
+    func update(players:[Game.PlayerViewModel])
 }
   
 class GameViewController: UIViewController, GameDisplayLogic {
     
     @IBOutlet var playerButtons: [PlayerButton]!
-    @IBOutlet weak var gameBoardView: UIView!
+    @IBOutlet weak var gameBoardView: UIView!{
+        didSet {
+            gameBoardView.isHidden = true
+        }
+    }
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var optionLabel: UILabel! {
         didSet{
@@ -82,7 +89,6 @@ class GameViewController: UIViewController, GameDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.startMatch()
 
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: [UIView.KeyframeAnimationOptions(rawValue: UIView.AnimationOptions.repeat.rawValue), UIView.KeyframeAnimationOptions(rawValue: UIView.KeyframeAnimationOptions.RawValue(UIView.AnimationCurve.easeInOut.rawValue)), UIView.KeyframeAnimationOptions(rawValue: UIView.AnimationOptions.autoreverse.rawValue)] , animations: {
             self.optionLabel.alpha = 0.5
@@ -93,7 +99,22 @@ class GameViewController: UIViewController, GameDisplayLogic {
     
     // MARK: - Display
 
-
+    func displayBoardWith(round: Game.Round){
+        
+        gameBoardView.showWithAnimation()
+        startMatchButton.hideWithAnimation()
+        wordLabel.text = round.word
+    }
+    
+    func displayRoundResult(playerNumber: Int, isWinner: Bool){
+        
+    }
+    
+    func update(players: [Game.PlayerViewModel]) {
+        for (index, player) in players.enumerated() {
+            playerButtons[index].setTitle(player.title, for: .normal)
+        }
+    }
     
     // MARK: - IBActions
 
@@ -101,8 +122,25 @@ class GameViewController: UIViewController, GameDisplayLogic {
         interactor?.startMatch()
     }
     
-    @IBAction func playerBuzzAction(sender: UIButton) {
+    func display(option: String) {
         
+        displayedOption = option
+        
+        UIView.animate(withDuration: 0.2, animations: { [weak self]() -> Void in
+            self?.optionLabel.alpha = 0
+        }, completion: { [weak self] (finishes) -> Void in
+            if finishes {
+                self?.optionLabel.text = option
+                UIView.animate(withDuration: 0.2, animations: { [weak self]() -> Void in
+                    self?.optionLabel.alpha = 1
+                }, completion: nil)
+            }
+        })
     }
     
+    private var displayedOption: String?
+    
+    @IBAction func playerBuzzAction(sender: UIButton) {
+        interactor?.selected(option: displayedOption! , by: sender.tag)
+    }
 }

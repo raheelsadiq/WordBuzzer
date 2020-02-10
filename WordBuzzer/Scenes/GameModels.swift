@@ -14,14 +14,19 @@ import UIKit
 
 enum Game {
 
+    struct PlayerViewModel {
+        let title: String
+    }
+    
     struct Player {
         var score: Int
     }
     
     struct Round {
         let word: String
+        let correctAnswer: String
         let options: [String]
-        let correctAnswer: [String]
+        let time: TimeInterval
     }
     
     

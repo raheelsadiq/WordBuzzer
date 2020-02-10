@@ -99,23 +99,31 @@ Match</string>
                                             <action selector="playerBuzzActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OWU-Ey-KJd"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="y1k-Ab-RQg">
-                                        <rect key="frame" x="20" y="323.5" width="374" height="171"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="y1k-Ab-RQg">
+                                        <rect key="frame" x="20" y="312" width="374" height="194"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHg-YB-S2j">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHg-YB-S2j" customClass="WordLabel" customModule="WordBuzzer" customModuleProvider="target">
+                                                <rect key="frame" x="155.5" y="0.0" width="63" height="44"/>
+                                                <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="YvQ-lG-ccm"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
                                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translates to:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RS-Vw-0LH">
-                                                <rect key="frame" x="0.0" y="74.5" width="374" height="18"/>
+                                                <rect key="frame" x="148" y="84" width="78" height="18"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygP-Hw-Clb">
-                                                <rect key="frame" x="0.0" y="132.5" width="374" height="38.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygP-Hw-Clb" customClass="WordLabel" customModule="WordBuzzer" customModuleProvider="target">
+                                                <rect key="frame" x="147.5" y="142" width="79.5" height="52"/>
+                                                <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="6ZL-SR-beL"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -159,7 +167,10 @@ Match</string>
                         <outlet property="optionLabel" destination="ygP-Hw-Clb" id="fj7-Nt-nNM"/>
                         <outlet property="startMatchButton" destination="8kQ-Kd-A9p" id="WfW-aU-Cnm"/>
                         <outlet property="wordLabel" destination="fHg-YB-S2j" id="os5-cT-jeO"/>
-                        <outletCollection property="playerButtons" destination="jBk-1E-z25" collectionClass="NSMutableArray" id="YXA-xR-yj2"/>
+                        <outletCollection property="playerButtons" destination="FoQ-j6-O1E" collectionClass="NSMutableArray" id="O69-UN-1qG"/>
+                        <outletCollection property="playerButtons" destination="cew-cV-zPe" collectionClass="NSMutableArray" id="bh4-5h-6OI"/>
+                        <outletCollection property="playerButtons" destination="VT4-13-DB2" collectionClass="NSMutableArray" id="EQR-Mj-wGl"/>
+                        <outletCollection property="playerButtons" destination="jBk-1E-z25" collectionClass="NSMutableArray" id="yN6-Oe-t3k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
