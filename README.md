@@ -11,7 +11,8 @@
 Total time = 6 hours
 
 ## Overview
-This demo is made using VIP architecture. I tried to focus more on Architecture and data flow, rather than the UI, because it does take to think implement, I wanted to showcase my clean coding/architecture skills. 
+This demo is made using **VIP architecture**. I tried to focus more on Architecture and data flow, rather than the UI
+I wanted to showcase my clean coding/architecture skills. 
 Few test case are also writter to demonstrate how it can be done in VIP architecutre.
 
 ## Tests
@@ -19,6 +20,6 @@ We can write test for boundry methods, boundry methods are those which are decla
 
 
 ## Improvments
-### UI and animations
-Time out if no one answers.
-Animation delay for win or lose for states
+1. **Mainly UI and animations**
+2. Time out if no one answers.
+3. Animation delay for win or lose for states
