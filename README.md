@@ -1,4 +1,4 @@
-# WordBuzzer
+# WordBuzzer for Babbel
 
 ## Work breakdown
 
